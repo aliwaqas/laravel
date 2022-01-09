@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::view('/home', 'home')->middleware(['auth', 'verified']);
-Route::view('/profile/edit', 'profile.edit')->middleware('auth');
-Route::view('/profile/password', 'profile.password')->middleware('auth');
+Route::view('/profile/edit', 'profile.edit')->middleware('auth')->name('profile-edit');
+Route::view('/profile/password', 'profile.password')->middleware('auth')->name('profile-password');
 
 require __DIR__ . '/admin.php';
